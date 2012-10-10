@@ -1,0 +1,22 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.popup {
+    background: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    width: 100%;
+    position: fixed;
+}
+
+.popup-block {
+    border: dashed 1px #000;
+    position: absolute;
+}
+
+.popup-content {
+    height: 150px;
+    width: 300px;
+}
