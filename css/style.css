@@ -5,6 +5,10 @@ p {
     padding: 0;
 }
 
+.global {
+    height: 1000px;
+}
+
 /** Mandatory codes **/
 
 .lightbox {
@@ -25,11 +29,12 @@ p {
 
 .lightbox-block {
     border: dashed 1px #000;
+    border-radius: 5px;
 }
 
 .lightbox-content {
-    height: 150px;
-    width: 300px;
+    height: 300px;
+    width: 500px;
     position: relative;
 }
 
