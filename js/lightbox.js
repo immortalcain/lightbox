@@ -12,7 +12,8 @@
 
         // Defaults options
         var defaults = {
-            speed: 500
+            speed: 500,
+            resize: true
         };
 
         var param = $.extend(defaults, opts);
