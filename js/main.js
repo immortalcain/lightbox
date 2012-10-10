@@ -1,5 +1,5 @@
 $(document).ready(function(){
 
-    $('.popup_block').LightBox();
+    $(".popup-block").LightBox();
 
 });

@@ -7,15 +7,12 @@
 // jQuery: 1.8.2
 //
 
-jQuery(function(){
-    function($){
-        $.fn.LightBox = function(args){
-            args = $.extend({
-                centerElem: "default_1"
-            }, args);
+(function($) {
+    $.fn.LightBox = function() {
 
-            var centerElem = ".popup-block";
+        this.each(function(){
 
+            var centerElem = $(this);
             var windowHeight = $(window).height();
             var windowWidth = $(window).width();
             var elementHeight = $(centerElem).height();
@@ -25,9 +22,8 @@ jQuery(function(){
                 "top": ((windowHeight / 2) - (elementHeight / 2)),
                 "left":((windowWidth / 2) - (elementWidth / 2))
             });
+        });
+        return this;
 
-            // eoc
-            return this;
-        };
-    }(jQuery);
-});
+    };
+})(jQuery);
