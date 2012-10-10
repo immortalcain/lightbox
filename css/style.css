@@ -1,22 +1,45 @@
 html,
-body {
+body,
+p {
     margin: 0;
     padding: 0;
 }
 
+/** Mandatory codes **/
+
 .lightbox {
-    background: rgba(0, 0, 0, 0.5);
     height: 100%;
     width: 100%;
     position: fixed;
 }
 
 .lightbox-block {
-    border: dashed 1px #000;
     position: absolute;
+}
+
+/** Optional codes **/
+
+.lightbox {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.lightbox-block {
+    border: dashed 1px #000;
 }
 
 .lightbox-content {
     height: 150px;
     width: 300px;
+    position: relative;
+}
+
+.close {
+    display: block;
+    background: url(../images/cross.png) no-repeat;
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
 }
