@@ -1,5 +1,6 @@
 $(document).ready(function(){
 
-    $(".lightbox-block").LightBox();
+    $(".lightbox-block").LightBox({
+    });
 
 });
