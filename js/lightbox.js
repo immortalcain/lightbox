@@ -1,45 +1,33 @@
-/*
- * V1.0
- * Author : Boris Damevin
- * Licence CC-BY http://creativecommons.org/licenses/by/3.0/fr/
-
-
-$(document).ready(function(){
-
-    var centerElem = ".popup-block";
-
-    var windowHeight = $(window).height();
-    var windowWidth = $(window).width();
-    var elementHeight = $(centerElem).height();
-    var elementWidth = $(centerElem).width();
-
-    $(centerElem).css({
-        "top": ((windowHeight / 2) - (elementHeight / 2)),
-        "left": ((windowWidth / 2) - (elementWidth / 2))
-    });
-
-});*/
-
-// project:
-// author:
-// date:
+// Project: LightBox
+// Version: v1.1
+// Author: Boris Damevin
+// Release Date: 10/10/2012
 //
-// description:
-// jquery version:
+// Description: LightBox
+// jQuery: 1.8.2
 //
+
 jQuery(function(){
     function($){
-        $.fn.my_plugin = function(args){
+        $.fn.LightBox = function(args){
             args = $.extend({
-                key_1: "default_1",
-                key_2: "default_2"
+                centerElem: "default_1"
             }, args);
-            // place your code here
 
+            var centerElem = ".popup-block";
+
+            var windowHeight = $(window).height();
+            var windowWidth = $(window).width();
+            var elementHeight = $(centerElem).height();
+            var elementWidth = $(centerElem).width();
+
+            $(centerElem).css({
+                "top": ((windowHeight / 2) - (elementHeight / 2)),
+                "left":((windowWidth / 2) - (elementWidth / 2))
+            });
 
             // eoc
             return this;
         };
-
     }(jQuery);
-}); 
+});
