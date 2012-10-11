@@ -34,9 +34,13 @@
             // Keep center with the window resize
             window.onresize = alignResize;
             function alignResize(){
+
+                var windowHeight = $(window).height(); // The new window height
+                var windowWidth = $(window).width(); // The new window width
+
                 $(centerElem).css({
-                    "top":  (($(window).height() / 2) - (elementHeight / 2)),
-                    "left": (($(window).width() / 2) - (elementWidth / 2))
+                    "top":  ((windowHeight / 2) - (elementHeight / 2)),
+                    "left": ((windowWidth / 2) - (elementWidth / 2))
                 });
             }
 
@@ -48,4 +52,4 @@
         });
 
     };
-})(jQuery);
+})(jQuery)
