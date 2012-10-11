@@ -1,7 +1,7 @@
 // Project: LightBox
-// Version: v1.0
+// Version: v1.1
 // Author: Boris Damevin
-// Release Date: 10/10/2012
+// Release Date: 11/10/2012
 //
 // Description: LightBox
 // jQuery: 1.8.2
@@ -20,6 +20,7 @@
         return this.each(function(){
 
             var centerElem = $(this);
+
             var windowHeight = $(window).height(); // The actual window height
             var windowWidth = $(window).width(); // The actual window width
             var elementHeight = $(centerElem).height();  // The element height
@@ -29,6 +30,15 @@
                 "top":  ((windowHeight / 2) - (elementHeight / 2)),
                 "left": ((windowWidth / 2) - (elementWidth / 2))
             });
+
+            // Keep center with the window resize
+            window.onresize = alignResize;
+            function alignResize(){
+                $(centerElem).css({
+                    "top":  (($(window).height() / 2) - (elementHeight / 2)),
+                    "left": (($(window).width() / 2) - (elementWidth / 2))
+                });
+            }
 
             // The close button function
             $(".lightbox .close").click(function(){
