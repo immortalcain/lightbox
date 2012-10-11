@@ -1,11 +1,11 @@
-// Project: LightBox
+/* Project: LightBox
 // Version: v1.1
 // Author: Boris Damevin
 // Release Date: 11/10/2012
 //
 // Description: LightBox
 // jQuery: 1.8.2
-//
+*/
 
 (function($){
     $.fn.LightBox = function(opts){
@@ -20,7 +20,6 @@
         return this.each(function(){
 
             var centerElem = $(this);
-
             var windowHeight = $(window).height(); // The actual window height
             var windowWidth = $(window).width(); // The actual window width
             var elementHeight = $(centerElem).height();  // The element height
