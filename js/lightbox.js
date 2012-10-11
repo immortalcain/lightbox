@@ -1,18 +1,20 @@
 /* Project: LightBox
-// Version: v1.1
-// Author: Boris Damevin
-// Release Date: 11/10/2012
-//
-// Description: LightBox
-// jQuery: 1.8.2
-*/
+ // Version: v1.2
+ // Author: Boris Damevin
+ // Release Date: 11/10/2012
+ //
+ // Description: LightBox
+ // jQuery: 1.8.2
+ */
 
 (function($){
     $.fn.LightBox = function(opts){
 
         // Defaults options
         var defaults = {
-            speed: 500
+            closeSpeed:  500,
+            closeEasing: 'linear',
+            closeEffect: 'fade'
         };
 
         var param = $.extend(defaults, opts);
@@ -45,9 +47,8 @@
 
             // The close button function
             $(".lightbox .close").click(function(){
-                $(".lightbox").fadeOut(param.speed);
+                $(".lightbox").hide(param.closeEffect, param.closeEasing, param.closeSpeed);
             });
-
         });
 
     };
