@@ -1,11 +1,13 @@
-LightBox.js
+<h1>LightBox.js</h1>
 
-Call the plugin:
+## Call the plugin:
 
-$(".lightbox-block").LightBox();
+<pre>$(".lightbox-block").LightBox();</pre>
 
-Realignment when resizing the window:
+### Realignment when resizing the window:
 
+<pre>
 $(window).resize(function() {
     $(".lightbox-block").LightBox();
 });
+</pre>

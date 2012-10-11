@@ -1,5 +1,5 @@
 // Project: LightBox
-// Version: v1.1
+// Version: v1.0
 // Author: Boris Damevin
 // Release Date: 10/10/2012
 //
