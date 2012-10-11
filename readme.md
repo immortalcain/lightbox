@@ -8,8 +8,4 @@
 
 ### Realignment when resizing the window:
 
-<pre>
-    <code>$(window).resize(function() {
-        $(".lightbox-block").LightBox();
-    });</code>
-</pre>
+The realignment is integrated in the plugin.
