@@ -12,9 +12,12 @@
 
         // Defaults options
         var defaults = {
+            openSpeed:   500,
+            openEffect:  'fade',
+            openEasing:  'linear',
             closeSpeed:  500,
-            closeEasing: 'linear',
-            closeEffect: 'fade'
+            closeEffect: 'fade',
+            closeEasing: 'linear'
         };
 
         var param = $.extend(defaults, opts);
@@ -45,7 +48,12 @@
                 });
             }
 
-            // The close button function
+            // The open function
+            $('a[rel="lightbox"]').click(function(){
+                $(".lightbox").show(param.openEffect, param.openEasing, param.openSpeed);
+            });
+
+            // The close function
             $(".lightbox .close").click(function(){
                 $(".lightbox").hide(param.closeEffect, param.closeEasing, param.closeSpeed);
             });
