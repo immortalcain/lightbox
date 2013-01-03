@@ -1,11 +1,14 @@
 /* Project: LightBox
-// Version: v1.1
-// Author: Boris Damevin
-// Release Date: 11/10/2012
-//
-// Description: LightBox
-// jQuery: 1.8.2
-*/
+ * Code name: Chimeara
+ * Version: 1.1
+ * Author: Boris Damevin
+ * Author URL:
+ * Release Date: 11/10/2012
+ *
+ * Description: LightBox
+ * jQuery: 1.8+
+ * Browsers: IE7+, Firefox 5+, Chrome 20+, Safari 3+, Opera 10+
+ */
 
 (function($){
     $.fn.LightBox = function(opts){
