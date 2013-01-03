@@ -1,6 +1,6 @@
 /* Project: LightBox
  * Code name: Chimeara
- * Version: 1.1
+ * Version: 1.5
  * Author: Boris Damevin
  * Author URL:
  * Release Date: 11/10/2012
@@ -15,12 +15,12 @@
 
         // Defaults options
         var defaults = {
-            openSpeed:   500,
-            openEffect:  'fade',
-            openEasing:  'linear',
-            closeSpeed:  500,
-            closeEffect: 'fade',
-            closeEasing: 'linear'
+            openSpeed   : 500,
+            openEffect  : 'fade',
+            openEasing  : 'linear',
+            closeSpeed  : 500,
+            closeEffect : 'fade',
+            closeEasing : 'linear'
         };
 
         var param = $.extend(defaults, opts);
@@ -38,8 +38,8 @@
             console.log($windowHeight, $windowWidth, $elementHeight, $elementWidth);
 
             $($centerElem).css({
-                "top":  (($windowHeight / 2) - ($elementHeight / 2)),
-                "left": (($windowWidth / 2) - ($elementWidth / 2))
+                "top"  : (($windowHeight / 2) - ($elementHeight / 2)),
+                "left" : (($windowWidth / 2) - ($elementWidth / 2))
             });
 
             // Keep center with the window resize
@@ -49,9 +49,17 @@
                 var $windowHeight = $(window).height(); // The new window height
                 var $windowWidth = $(window).width(); // The new window width
 
-                $($centerElem).css({
+                /**$($centerElem).css({
                     "top":  (($windowHeight / 2) - ($elementHeight / 2)),
                     "left": (($windowWidth / 2) - ($elementWidth / 2))
+                });**/
+
+                var $newH = (($windowHeight / 2) - ($elementHeight / 2));
+                var $newW = (($windowWidth / 2) - ($elementWidth / 2));
+
+                $($centerElem).css({
+                    "top"  : $newH,
+                    "left" : $newW
                 });
             }
 
