@@ -57,7 +57,7 @@
 
             // The open function
             $('a[rel="lightbox"]').click(function(){
-                $(".lightbox").show();
+                $(".lightbox").show(param.openEffect, param.openEasing, param.openSpeed);
             });
 
             // The close function

@@ -6,7 +6,7 @@ p {
 }
 
 .global {
-    height: 1000px;
+    height: auto;
 }
 
 /*-----------------*/
@@ -35,7 +35,6 @@ p {
 
 .lightbox-block {
     border: dashed 1px #000;
-    border-radius: 5px;
 }
 
 .lightbox-content {
