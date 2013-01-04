@@ -15,12 +15,13 @@
 
         // Defaults options
         var defaults = {
-            openSpeed   : 500,
-            openEffect  : 'fade',
-            openEasing  : 'linear',
-            closeSpeed  : 500,
-            closeEffect : 'fade',
-            closeEasing : 'linear'
+            openFirst  : false,
+            openSpeed  : 500,
+            openEffect : 'fade',
+            openEasing : 'linear',
+            closeSpeed : 500,
+            closeEffect: 'fade',
+            closeEasing: 'linear'
         };
 
         var param = $.extend(defaults, opts);
@@ -34,8 +35,8 @@
             var $elementWidth = $($centerElem).width(); // The element width
 
             $($centerElem).css({
-                "top"  : (($windowHeight / 2) - ($elementHeight / 2)),
-                "left" : (($windowWidth / 2) - ($elementWidth / 2))
+                "top" : (($windowHeight / 2) - ($elementHeight / 2)),
+                "left": (($windowWidth / 2) - ($elementWidth / 2))
             });
 
             // Keep center with the window resize
@@ -46,21 +47,42 @@
                 var $windowWidth = $(window).width(); // The new window width
 
                 $($centerElem).css({
-                    "top":  (($windowHeight / 2) - ($elementHeight / 2)),
+                    "top" : (($windowHeight / 2) - ($elementHeight / 2)),
                     "left": (($windowWidth / 2) - ($elementWidth / 2))
                 });
 
             }
 
+
+
+            // Close and Open CSS options
+            var $openCss = $(".lightbox").css({
+                "opacity": "100",
+                "z-index": "100"
+            });
+            var $closeCss = $(".lightbox").css({
+                "opacity": "0",
+                "z-index": "-1"
+            });
+
+            console.log($openCss);
+
             // The open function
             $('a[rel="lightbox"]').click(function(){
-                $(".lightbox").show(param.openEffect, param.openEasing, param.openSpeed).css("opacity", "100");
+                $openCss;
+                //.show(param.openEffect, param.openEasing, param.openSpeed)
             });
 
             // The close function
             $(".lightbox .close").click(function(){
-                $(".lightbox").hide(param.closeEffect, param.closeEasing, param.closeSpeed);
+                $closeCss;
+                //.hide(param.closeEffect, param.closeEasing, param.closeSpeed)
             });
+
+            // Boolean parameters
+            if(param.openFirst = true){
+                $($openCss);
+            }
         });
 
     };
