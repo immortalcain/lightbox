@@ -10,8 +10,7 @@
 
 <pre>
     <code>openFirst: boolean
-    Default: false
-    </code>
+    Default: false</code>
 </pre>
 
 ### Realignment when resizing the window:
