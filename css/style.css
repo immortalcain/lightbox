@@ -23,6 +23,8 @@ p {
 }
 
 .lightbox-block {
+    height: 300px;
+    width: 500px;
     position: absolute;
 }
 
@@ -35,8 +37,6 @@ p {
 }
 
 .lightbox-block {
-    height: 300px;
-    width: 500px;
     border: dashed 1px #000;
 }
 
