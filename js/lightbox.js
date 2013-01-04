@@ -28,7 +28,11 @@
 
         return this.each(function(){
 
+            // Global variables
             var $centerElem = $(this);
+            var $globalDiv = $(".lightbox");
+
+            // Center variables
             var $windowHeight = $(window).height(); // The actual window height
             var $windowWidth = $(window).width(); // The actual window width
             var $elementHeight = $($centerElem).height();  // The element height
@@ -55,27 +59,21 @@
 
             // The open function
             $('a[rel="lightbox"]').click(function(){
-                $(".lightbox").show(param.openEffect, param.openEasing, param.openSpeed);
+                $($globalDiv).show(param.openEffect, param.openEasing, param.openSpeed);
             });
 
             // The close function
             $(".lightbox .close").click(function(){
-                $(".lightbox").hide(param.closeEffect, param.closeEasing, param.closeSpeed)
+                $($globalDiv).hide(param.closeEffect, param.closeEasing, param.closeSpeed)
             });
 
-            // Boolean parameters
-//            if(param.openFirst){
-//                $(".lightbox").css({
-//                    "opacity": "100",
-//                    "z-index": "100"
-//                });
-//            }
-//            else{
-//                $(".lightbox").css({
-//                    "opacity": "0",
-//                    "z-index": "-1"
-//                });
-//            }
+            //Boolean parameters
+            if(param.openFirst){
+                $($globalDiv).show();
+            }
+            else{
+                $($globalDiv).hide();
+            }
         });
 
     };
