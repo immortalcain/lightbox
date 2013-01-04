@@ -14,13 +14,12 @@ p {
 /*-----------------*/
 
 .lightbox {
-    opacity: 0;
+    display: none;
     height: 100%;
     width: 100%;
     position: fixed;
     top: 0;
     left: 0;
-    z-index: -1;
 }
 
 .lightbox-block {
@@ -36,12 +35,12 @@ p {
 }
 
 .lightbox-block {
+    height: 300px;
+    width: 500px;
     border: dashed 1px #000;
 }
 
 .lightbox-content {
-    height: 300px;
-    width: 500px;
     position: relative;
 }
 

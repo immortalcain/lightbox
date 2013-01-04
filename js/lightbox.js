@@ -55,34 +55,27 @@
 
             // The open function
             $('a[rel="lightbox"]').click(function(){
-                $(".lightbox").css({
-                    "opacity": "100",
-                    "z-index": "100"
-                });
-                //.show(param.openEffect, param.openEasing, param.openSpeed)
+                $(".lightbox").show(param.openEffect, param.openEasing, param.openSpeed);
             });
 
             // The close function
             $(".lightbox .close").click(function(){
-                $(".lightbox").css({
-                    "opacity": "0",
-                    "z-index": "-1"
-                });
-                //.hide(param.closeEffect, param.closeEasing, param.closeSpeed)
+                $(".lightbox").hide(param.closeEffect, param.closeEasing, param.closeSpeed)
             });
 
             // Boolean parameters
-            if(param.openFirst){
-                $(".lightbox").css({
-                    "opacity": "100",
-                    "z-index": "100"
-                });
-            }else{
-                $(".lightbox").css({
-                    "opacity": "0",
-                    "z-index": "-1"
-                });
-            }
+//            if(param.openFirst){
+//                $(".lightbox").css({
+//                    "opacity": "100",
+//                    "z-index": "100"
+//                });
+//            }
+//            else{
+//                $(".lightbox").css({
+//                    "opacity": "0",
+//                    "z-index": "-1"
+//                });
+//            }
         });
 
     };
