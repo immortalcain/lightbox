@@ -53,35 +53,37 @@
 
             }
 
-
-
-            // Close and Open CSS options
-            var $openCss = $(".lightbox").css({
-                "opacity": "100",
-                "z-index": "100"
-            });
-            var $closeCss = $(".lightbox").css({
-                "opacity": "0",
-                "z-index": "-1"
-            });
-
-            console.log($openCss);
-
             // The open function
             $('a[rel="lightbox"]').click(function(){
-                $openCss;
+                $(".lightbox").css({
+                    "opacity": "100",
+                    "z-index": "100"
+                });
                 //.show(param.openEffect, param.openEasing, param.openSpeed)
             });
 
             // The close function
             $(".lightbox .close").click(function(){
-                $closeCss;
+                $(".lightbox").css({
+                    "opacity": "0",
+                    "z-index": "-1"
+                });
                 //.hide(param.closeEffect, param.closeEasing, param.closeSpeed)
             });
 
             // Boolean parameters
-            if(param.openFirst = true){
-                $($openCss);
+            if(param.openFirst){
+                $(".lightbox").css({
+                    "opacity": "100",
+                    "z-index": "100"
+                });
+                console.log('test1');
+            }else{
+                $(".lightbox").css({
+                    "opacity": "0",
+                    "z-index": "-1"
+                });
+                console.log('test2');
             }
         });
 
