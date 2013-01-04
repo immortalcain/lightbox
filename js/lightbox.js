@@ -27,15 +27,11 @@
 
         return this.each(function(){
 
-            $(".lightbox").hide();
-
             var $centerElem = $(this);
             var $windowHeight = $(window).height(); // The actual window height
             var $windowWidth = $(window).width(); // The actual window width
             var $elementHeight = $($centerElem).height();  // The element height
             var $elementWidth = $($centerElem).width(); // The element width
-
-            console.log($windowHeight, $windowWidth, $elementHeight, $elementWidth);
 
             $($centerElem).css({
                 "top"  : (($windowHeight / 2) - ($elementHeight / 2)),
@@ -49,23 +45,16 @@
                 var $windowHeight = $(window).height(); // The new window height
                 var $windowWidth = $(window).width(); // The new window width
 
-                /**$($centerElem).css({
+                $($centerElem).css({
                     "top":  (($windowHeight / 2) - ($elementHeight / 2)),
                     "left": (($windowWidth / 2) - ($elementWidth / 2))
-                });**/
-
-                var $newH = (($windowHeight / 2) - ($elementHeight / 2));
-                var $newW = (($windowWidth / 2) - ($elementWidth / 2));
-
-                $($centerElem).css({
-                    "top"  : $newH,
-                    "left" : $newW
                 });
+
             }
 
             // The open function
             $('a[rel="lightbox"]').click(function(){
-                $(".lightbox").show(param.openEffect, param.openEasing, param.openSpeed);
+                $(".lightbox").show(param.openEffect, param.openEasing, param.openSpeed).css("opacity", "100");
             });
 
             // The close function
