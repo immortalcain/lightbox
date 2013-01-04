@@ -1,6 +1,6 @@
 /* Project: LightBox
  * Code name: Chimeara
- * Version: 1.1
+ * Version: 1.2
  * Author: Boris Damevin
  * Author URL:
  * Release Date: 11/10/2012
@@ -15,42 +15,65 @@
 
         // Defaults options
         var defaults = {
-            speed: 500
+            openFirst  : false,
+            openSpeed  : 500,
+            openEffect : 'fade',
+            openEasing : 'linear',
+            closeSpeed : 500,
+            closeEffect: 'fade',
+            closeEasing: 'linear'
         };
 
         var param = $.extend(defaults, opts);
 
         return this.each(function(){
 
-            var centerElem = $(this);
-            var windowHeight = $(window).height(); // The actual window height
-            var windowWidth = $(window).width(); // The actual window width
-            var elementHeight = $(centerElem).height();  // The element height
-            var elementWidth = $(centerElem).width(); // The element width
+            // Global variables
+            var $centerElem = $(this);
+            var $globalDiv = $(".lightbox");
 
-            $(centerElem).css({
-                "top":  ((windowHeight / 2) - (elementHeight / 2)),
-                "left": ((windowWidth / 2) - (elementWidth / 2))
+            // Center variables
+            var $windowHeight = $(window).height(); // The actual window height
+            var $windowWidth = $(window).width(); // The actual window width
+            var $elementHeight = $($centerElem).height();  // The element height
+            var $elementWidth = $($centerElem).width(); // The element width
+
+            $($centerElem).css({
+                "top" : (($windowHeight / 2) - ($elementHeight / 2)),
+                "left": (($windowWidth / 2) - ($elementWidth / 2))
             });
 
             // Keep center with the window resize
             window.onresize = alignResize;
             function alignResize(){
 
-                var windowHeight = $(window).height(); // The new window height
-                var windowWidth = $(window).width(); // The new window width
+                var $windowHeight = $(window).height(); // The new window height
+                var $windowWidth = $(window).width(); // The new window width
 
-                $(centerElem).css({
-                    "top":  ((windowHeight / 2) - (elementHeight / 2)),
-                    "left": ((windowWidth / 2) - (elementWidth / 2))
+                $($centerElem).css({
+                    "top" : (($windowHeight / 2) - ($elementHeight / 2)),
+                    "left": (($windowWidth / 2) - ($elementWidth / 2))
                 });
+
             }
 
-            // The close button function
-            $(".lightbox .close").click(function(){
-                $(".lightbox").fadeOut(param.speed);
+            // The open function
+            $('a[rel="lightbox"]').click(function(){
+                $($globalDiv).show(param.openEffect, param.openEasing, param.openSpeed);
             });
 
+            // The close function
+            $(".lightbox .close").click(function(){
+                $($globalDiv).hide(param.closeEffect, param.closeEasing, param.closeSpeed)
+            });
+
+            //Boolean parameters
+            if(param.openFirst){
+                $($globalDiv).show();
+            }
+            else{
+                $($globalDiv).hide();
+            }
         });
 
     };

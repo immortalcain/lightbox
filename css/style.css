@@ -6,7 +6,7 @@ p {
 }
 
 .global {
-    height: 1000px;
+    height: auto;
 }
 
 /*-----------------*/
@@ -14,12 +14,17 @@ p {
 /*-----------------*/
 
 .lightbox {
+    display: none;
     height: 100%;
     width: 100%;
     position: fixed;
+    top: 0;
+    left: 0;
 }
 
 .lightbox-block {
+    height: 300px;
+    width: 500px;
     position: absolute;
 }
 
@@ -33,12 +38,9 @@ p {
 
 .lightbox-block {
     border: dashed 1px #000;
-    border-radius: 5px;
 }
 
 .lightbox-content {
-    height: 300px;
-    width: 500px;
     position: relative;
 }
 
