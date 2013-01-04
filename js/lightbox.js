@@ -77,13 +77,11 @@
                     "opacity": "100",
                     "z-index": "100"
                 });
-                console.log('test1');
             }else{
                 $(".lightbox").css({
                     "opacity": "0",
                     "z-index": "-1"
                 });
-                console.log('test2');
             }
         });
 
