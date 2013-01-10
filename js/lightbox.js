@@ -39,6 +39,9 @@
             var $elementHeight = $($centerElem).height();  // The element height
             var $elementWidth = $($centerElem).width(); // The element width
 
+            // Add HTML
+            $($centerElem).wrap('<div class="lightbox" />');
+
             // Center element
             $($centerElem).css({
                 "top" : (($windowHeight / 2) - ($elementHeight / 2)),
