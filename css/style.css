@@ -23,6 +23,7 @@ p {
 }
 
 .lightbox-block {
+    background: #FFFFFF;
     height: 300px;
     width: 500px;
     position: absolute;
