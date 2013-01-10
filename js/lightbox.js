@@ -29,6 +29,9 @@
 
         return this.each(function(){
 
+            // Add HTML
+            $(this).wrap('<div class="lightbox" />');
+
             // Global variables
             var $centerElem = $(this);
             var $globalDiv = $(".lightbox");
@@ -39,8 +42,8 @@
             var $elementHeight = $($centerElem).height();  // The element height
             var $elementWidth = $($centerElem).width(); // The element width
 
-            // Add HTML
-            $($centerElem).wrap('<div class="lightbox" />');
+
+
 
             // Center element
             $($centerElem).css({
