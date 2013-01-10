@@ -84,10 +84,10 @@
             }
 
             if(param.aroundEffect){
-                $(".lightbox").css("height", "100%", "width", "100%");
+                $($globalDiv).css("height", "100%", "width", "100%");
             }
             else{
-                $(".lightbox").css("height", 0, "width", 0);
+                $($globalDiv).css("height", 0, "width", 0);
             }
 
         });
