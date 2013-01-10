@@ -1,6 +1,6 @@
 /* Project: LightBox
  * Code name: Chimeara
- * Version: 1.2
+ * Version: 1.3
  * Author: Boris Damevin
  * Author URL:
  * Release Date: 11/10/2012
@@ -15,13 +15,14 @@
 
         // Defaults options
         var defaults = {
-            openFirst  : false,
-            openSpeed  : 500,
-            openEffect : 'fade',
-            openEasing : 'linear',
-            closeSpeed : 500,
-            closeEffect: 'fade',
-            closeEasing: 'linear'
+            openFirst   : false,
+            openSpeed   : 500,
+            openEffect  : 'fade',
+            openEasing  : 'linear',
+            closeSpeed  : 500,
+            closeEffect : 'fade',
+            closeEasing : 'linear',
+            aroundEffect: true
         };
 
         var param = $.extend(defaults, opts);
@@ -38,6 +39,7 @@
             var $elementHeight = $($centerElem).height();  // The element height
             var $elementWidth = $($centerElem).width(); // The element width
 
+            // Center element
             $($centerElem).css({
                 "top" : (($windowHeight / 2) - ($elementHeight / 2)),
                 "left": (($windowWidth / 2) - ($elementWidth / 2))
@@ -67,13 +69,21 @@
                 $($globalDiv).hide(param.closeEffect, param.closeEasing, param.closeSpeed)
             });
 
-            //Boolean parameters
+            // Boolean parameters
             if(param.openFirst){
                 $($globalDiv).show();
             }
             else{
                 $($globalDiv).hide();
             }
+
+            if(param.aroundEffect){
+                $(".lightbox").css("height", "100%", "width", "100%");
+            }
+            else{
+                $(".lightbox").css("height", 0, "width", 0);
+            }
+
         });
 
     };

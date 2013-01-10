@@ -39,6 +39,13 @@
     Default: linear</code>
 </pre>
 
+#### Others options :
+
+<pre>
+    <code>aroundEffect  : boolean
+    Default: true</code>
+</pre>
+
 ### Realignment when resizing the window:
 
 The realignment is integrated in the plugin.
