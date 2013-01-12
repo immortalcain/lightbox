@@ -1,6 +1,6 @@
 /* Project: LightBox
  * Code name: Chimeara
- * Version: 1.3
+ * Version: 1.3.1
  * Author: Boris Damevin
  * Author URL:
  * Release Date: 11/10/2012
