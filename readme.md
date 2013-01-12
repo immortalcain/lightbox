@@ -3,7 +3,7 @@
 ## Call the plugin:
 
 <pre>
-    <code>$(".lightbox-block").LightBox();</code>
+    <code>$(var).LightBox();</code>
 </pre>
 
 ### Options:
