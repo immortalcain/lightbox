@@ -37,6 +37,7 @@
             var $centerElem = $(this);
             var $globalDiv = $(".lightbox");
             var $relAttr = $('a[rel="lightbox"]');
+            var $closeId = $("#close");
 
             // Center variables
             var $windowHeight = $(window).height(); // The actual window height
@@ -69,7 +70,7 @@
             });
 
             // The close function
-            $("#close").click(function(){
+            $($closeId).click(function(){
                 $($globalDiv).hide(param.closeEffect, param.closeEasing, param.closeSpeed);
             });
 
