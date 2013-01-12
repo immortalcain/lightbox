@@ -29,7 +29,7 @@ p {
     position: relative;
 }
 
-.close {
+.lightbox #close {
     display: block;
     background: url(../images/cross.png) no-repeat;
     width: 12px;

@@ -67,7 +67,7 @@
             });
 
             // The close function
-            $(".lightbox .close").click(function(){
+            $("#close").click(function(){
                 $($globalDiv).hide(param.closeEffect, param.closeEasing, param.closeSpeed)
             });
 
@@ -95,4 +95,4 @@
         });
 
     };
-})(jQuery)
+})(jQuery);
