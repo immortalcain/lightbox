@@ -1,8 +1,9 @@
 /* Project: LightBox
  * Code name: Chimeara
  * Version: 1.3.2
- * Author: Boris Damevin
+ * Author: Agence Epsilon
  * Author URL:
+ * Git URL: https://github.com/agenceepsilon/lightbox
  * Release Date: 11/10/2012
  *
  * Description: LightBox
