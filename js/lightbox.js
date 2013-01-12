@@ -36,6 +36,7 @@
             // Global variables
             var $centerElem = $(this);
             var $globalDiv = $(".lightbox");
+            var $relAttr = $('a[rel="lightbox"]');
 
             // Center variables
             var $windowHeight = $(window).height(); // The actual window height
@@ -63,13 +64,13 @@
             }
 
             // The open function
-            $('a[rel="lightbox"]').click(function(){
+            $($relAttr).click(function(){
                 $($globalDiv).show(param.openEffect, param.openEasing, param.openSpeed);
             });
 
             // The close function
             $("#close").click(function(){
-                $($globalDiv).hide(param.closeEffect, param.closeEasing, param.closeSpeed)
+                $($globalDiv).hide(param.closeEffect, param.closeEasing, param.closeSpeed);
             });
 
             // Boolean parameters

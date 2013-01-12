@@ -25,10 +25,6 @@ p {
     position: absolute;
 }
 
-.lightbox-content {
-    position: relative;
-}
-
 .lightbox #close {
     display: block;
     background: url(../images/cross.png) no-repeat;
