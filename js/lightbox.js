@@ -15,13 +15,13 @@
 
         // Defaults options
         var defaults = {
-            openFirst   : false,
-            openSpeed   : 500,
-            openEffect  : 'fade',
-            openEasing  : 'linear',
-            closeSpeed  : 500,
-            closeEffect : 'fade',
-            closeEasing : 'linear',
+            openFirst: false,
+            openSpeed: 500,
+            openEffect: 'fade',
+            openEasing: 'linear',
+            closeSpeed: 500,
+            closeEffect: 'fade',
+            closeEasing: 'linear',
             aroundEffect: true
         };
 
@@ -42,12 +42,9 @@
             var $elementHeight = $($centerElem).height();  // The element height
             var $elementWidth = $($centerElem).width(); // The element width
 
-
-
-
             // Center element
             $($centerElem).css({
-                "top" : (($windowHeight / 2) - ($elementHeight / 2)),
+                "top": (($windowHeight / 2) - ($elementHeight / 2)),
                 "left": (($windowWidth / 2) - ($elementWidth / 2))
             });
 
@@ -59,7 +56,7 @@
                 var $windowWidth = $(window).width(); // The new window width
 
                 $($centerElem).css({
-                    "top" : (($windowHeight / 2) - ($elementHeight / 2)),
+                    "top": (($windowHeight / 2) - ($elementHeight / 2)),
                     "left": (($windowWidth / 2) - ($elementWidth / 2))
                 });
 
