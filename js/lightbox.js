@@ -30,7 +30,7 @@
         return this.each(function(){
 
             // Add HTML
-            $(this).wrap('<div class="lightbox" />');
+            $(this).wrap('<div class="lightbox" style="display: none;" />');
 
             // Global variables
             var $centerElem = $(this);
@@ -59,7 +59,6 @@
                     "top": (($windowHeight / 2) - ($elementHeight / 2)),
                     "left": (($windowWidth / 2) - ($elementWidth / 2))
                 });
-
             }
 
             // The open function
@@ -81,7 +80,13 @@
             }
 
             if(param.aroundEffect){
-                $($globalDiv).css("height", "100%", "width", "100%");
+                $($globalDiv).css({
+                    "height": "100%",
+                    "width": "100%",
+                    "position": "fixed",
+                    "top": "0",
+                    "left": "0"
+                });
             }
             else{
                 $($globalDiv).css("height", 0, "width", 0);

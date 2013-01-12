@@ -9,26 +9,6 @@ p {
     height: auto;
 }
 
-/*-----------------*/
-/* Mandatory codes */
-/*-----------------*/
-
-.lightbox {
-    display: none;
-    height: 100%;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-}
-
-.lightbox-block {
-    background: #FFFFFF;
-    height: 300px;
-    width: 500px;
-    position: absolute;
-}
-
 /*----------------*/
 /* Optional codes */
 /*----------------*/
@@ -38,7 +18,11 @@ p {
 }
 
 .lightbox-block {
+    background: #FFFFFF;
+    height: 300px;
+    width: 500px;
     border: dashed 1px #000;
+    position: absolute;
 }
 
 .lightbox-content {
