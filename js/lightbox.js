@@ -31,6 +31,7 @@
 
             // Add HTML
             $(this).wrap('<div class="lightbox" style="display: none;" />');
+            $(this).append('<span id="close" />');
 
             // Global variables
             var $centerElem = $(this);
