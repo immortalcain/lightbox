@@ -26,7 +26,8 @@
             closeEffect: 'fade',
             closeEasing: 'linear',
             aroundEffect: true,
-            relAttribut: 'lightbox',
+            globalClass: 'lightbox',
+            relAttr: 'lightbox',
             cookieName: 'lightbox',
             cookieTime: 7
         };
@@ -36,46 +37,43 @@
         return this.each(function(){
 
             // Add HTML
-            $(this).wrap('<div class="lightbox" style="display: none;" />');
+            $(this).wrap('<div class="' + param.globalClass + '" style="display: none;" />');
             $(this).append('<span id="close" />');
 
             // Global variables
             var $centerElem = $(this);
-            var $globalDiv = $(".lightbox");
-            var $relAttr = $('a[rel="' + param.relAttribut + '"]');
+            var $globalDiv = $("." + param.globalClass);
+            var $relAttr = $('a[rel="' + param.relAttr + '"]');
             var $closeId = $("#close");
 
-            // Center variables
+            // --------------- //
+            // Center function //
+            // --------------- //
+
             var $windowHeight = $(window).height(); // The actual window height
             var $windowWidth = $(window).width(); // The actual window width
             var $elementHeight = $($centerElem).height();  // The element height
             var $elementWidth = $($centerElem).width(); // The element width
 
-            // ------------------------ //
-            // LightBox center function //
-            // ------------------------ //
+            function centerItem($elem, $windowH, $windowW){
+                $($elem).css({
+                    "top": (($windowH / 2) - ($elementHeight / 2)),
+                    "left": (($windowW / 2) - ($elementWidth / 2))
+                });
+            }
 
-            // Center element
-            $($centerElem).css({
-                "top": (($windowHeight / 2) - ($elementHeight / 2)),
-                "left": (($windowWidth / 2) - ($elementWidth / 2))
-            });
+            centerItem($centerElem, $windowHeight, $windowWidth);
 
             // ---------------------- //
             // Window Resize function //
             // ---------------------- //
 
-            // Keep center with the window resize
             window.onresize = alignResize;
             function alignResize(){
-
                 var $windowHeight = $(window).height(); // The new window height
                 var $windowWidth = $(window).width(); // The new window width
 
-                $($centerElem).css({
-                    "top": (($windowHeight / 2) - ($elementHeight / 2)),
-                    "left": (($windowWidth / 2) - ($elementWidth / 2))
-                });
+                centerItem($centerElem, $windowHeight, $windowWidth);
             }
 
             // -------------------- //

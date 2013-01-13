@@ -53,7 +53,11 @@
         Default: true</code>
 </pre>
 <pre>
-    <code>relAttribut: varchar
+    <code>globalClass: varchar
+        Default: lightbox</code>
+</pre>
+<pre>
+    <code>relAttr: varchar
         Default: lightbox</code>
 </pre>
 ### Realignment when resizing the window:
