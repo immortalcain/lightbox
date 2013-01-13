@@ -3,6 +3,7 @@
 <pre>
     <code>$(var).LightBox();</code>
 </pre>
+<p>Browsers : IE7+, Firefox 5+, Chrome 20+, Safari 3+, Opera 10+ </p>
 ### Options:
 #### Opening one time by session options:
 <p>The use of the variable "openFirst" active display popup unique throughout the duration of the session configured by
