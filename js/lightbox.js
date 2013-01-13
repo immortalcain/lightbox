@@ -8,6 +8,8 @@
  *
  * Description: LightBox
  * jQuery: 1.8+
+ * Plugin:
+ *  - jquery-cookie.js (https://github.com/carhartl/jquery-cookie)
  * Browsers: IE7+, Firefox 5+, Chrome 20+, Safari 3+, Opera 10+
  */
 

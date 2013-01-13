@@ -7,7 +7,7 @@
 #### Opening one time by session options:
 <p>The use of the variable "openFirst" active display popup unique throughout the duration of the session configured by
     the cookie created with the option "openFirst" enabled.</p>
-<p>jQuery-Cookie.js is required to create the cookie. Integrated package.
+<p>jquery-cookie.js is required to create the cookie. Integrated package.
     (https://github.com/carhartl/jquery-cookie)</p>
 <pre>
     <code>openFirst: boolean
