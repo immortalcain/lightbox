@@ -2,7 +2,7 @@
  * Code name: Chimeara
  * Version: 1.4
  * Author: Agence Epsilon
- * Author URL:
+ * Author URL: http://www.agenceepsilon.com
  * Git URL: https://github.com/agenceepsilon/lightbox
  * Release Date: 11/10/2012
  *
