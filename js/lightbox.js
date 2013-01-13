@@ -1,8 +1,9 @@
 /* Project: LightBox
  * Code name: Chimeara
- * Version: 1.3.2
- * Author: Boris Damevin
+ * Version: 1.4
+ * Author: Agence Epsilon
  * Author URL:
+ * Git URL: https://github.com/agenceepsilon/lightbox
  * Release Date: 11/10/2012
  *
  * Description: LightBox
@@ -22,7 +23,10 @@
             closeSpeed: 500,
             closeEffect: 'fade',
             closeEasing: 'linear',
-            aroundEffect: true
+            aroundEffect: true,
+            relAttribut: 'lightbox',
+            cookieName: 'lightbox',
+            cookieTime: 7
         };
 
         var param = $.extend(defaults, opts);
@@ -36,6 +40,8 @@
             // Global variables
             var $centerElem = $(this);
             var $globalDiv = $(".lightbox");
+            var $relAttr = $('a[rel="' + param.relAttribut + '"]');
+            var $closeId = $("#close");
 
             // Center variables
             var $windowHeight = $(window).height(); // The actual window height
@@ -43,11 +49,19 @@
             var $elementHeight = $($centerElem).height();  // The element height
             var $elementWidth = $($centerElem).width(); // The element width
 
+            // ------------------------ //
+            // LightBox center function //
+            // ------------------------ //
+
             // Center element
             $($centerElem).css({
                 "top": (($windowHeight / 2) - ($elementHeight / 2)),
                 "left": (($windowWidth / 2) - ($elementWidth / 2))
             });
+
+            // ---------------------- //
+            // Window Resize function //
+            // ---------------------- //
 
             // Keep center with the window resize
             window.onresize = alignResize;
@@ -62,24 +76,37 @@
                 });
             }
 
+            // -------------------- //
+            // Open/Close functions //
+            // -------------------- //
+
             // The open function
-            $('a[rel="lightbox"]').click(function(){
+            $($relAttr).click(function(){
                 $($globalDiv).show(param.openEffect, param.openEasing, param.openSpeed);
             });
 
             // The close function
-            $("#close").click(function(){
-                $($globalDiv).hide(param.closeEffect, param.closeEasing, param.closeSpeed)
+            $($closeId).click(function(){
+                $($globalDiv).hide(param.closeEffect, param.closeEasing, param.closeSpeed);
+                if(param.openFirst){
+                    $.cookie(param.cookieName, 1, {expires: param.cookieTime});
+                }
             });
 
-            // Boolean parameters
+            // ------------------ //
+            // Boolean parameters //
+            // ------------------ //
+
+            // Open First (openFirst)
             if(param.openFirst){
-                $($globalDiv).show();
+                if($.cookie(param.cookieName) != '1'){
+                    $($globalDiv).show();
+                }
             }
             else{
                 $($globalDiv).hide();
             }
-
+            // Around Effect (aroundEffect)
             if(param.aroundEffect){
                 $($globalDiv).css({
                     "height": "100%",
