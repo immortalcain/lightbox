@@ -1,12 +1,12 @@
-/* Project: LightBox
+/* Project: LightBox.js
  * Code name: Chimeara
- * Version: 1.4.1
+ * Version: 1.4.2
  * Author: Agence Epsilon
  * Author URL: http://www.agenceepsilon.com
  * Git URL: https://github.com/agenceepsilon/lightbox
  * Release Date: 11/10/2012
  *
- * Description: LightBox
+ * Description: LightBox.js
  * jQuery: 1.8+
  * jQuery UI: 1.9+
  * Plugin(s):
@@ -83,12 +83,18 @@
 
             // The open function
             $($relAttr).click(function(){
-                $($globalDiv).show(param.openEffect, param.openEasing, param.openSpeed);
+                $($globalDiv).show(param.openEffect, {
+                    duration: param.openSpeed,
+                    easing: param.openEasing
+                });
             });
 
             // The close function
             $($closeId).click(function(){
-                $($globalDiv).hide(param.closeEffect, param.closeEasing, param.closeSpeed);
+                $($globalDiv).hide(param.closeEffect, {
+                    duration: param.closeSpeed,
+                    easing: param.closeEasing
+                });
                 if(param.openFirst){
                     $.cookie(param.cookieName, 1, {expires: param.cookieTime});
                 }
