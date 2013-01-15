@@ -3,10 +3,10 @@
 <pre>
     <code>$(var).lightbox();</code>
 </pre>
-
 <ul>
-<li>Light</li>
-<li>Responsive</li>
+    <li>Light</li>
+    <li>Responsive</li>
+    <li>Display with cookies</li>
 </ul>
 
 <p>Browsers : IE7+, Firefox 5+, Chrome 20+, Safari 3+, Opera 10+ </p>
