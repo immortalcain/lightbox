@@ -1,7 +1,7 @@
-# LightBox.js
+# Lightbox.js
 ## Call the plugin:
 <pre>
-    <code>$(var).LightBox();</code>
+    <code>$(var).lightbox();</code>
 </pre>
 <p>Browsers : IE7+, Firefox 5+, Chrome 20+, Safari 3+, Opera 10+ </p>
 ### Options:
