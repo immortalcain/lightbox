@@ -15,9 +15,9 @@
     If you want to use version 2.0 of jQuery using the following html code:
     <pre>
         <code>
-            <!--[if lt IE 9]-->
+            <!--[if lt IE 9]>
             <script src="jquery-1.9.0.js"></script>
-            <!--[endif]-->
+            <![endif]-->
             <!--[if gte IE 9]><!-->
             <script src="jquery-2.0.0.js"></script>
             <!--[endif]-->
