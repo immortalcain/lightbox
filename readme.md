@@ -3,6 +3,12 @@
 <pre>
     <code>$(var).LightBox();</code>
 </pre>
+
+<ul>
+<li>Light</li>
+<li>Responsive</li>
+</ul>
+
 <p>Browsers : IE7+, Firefox 5+, Chrome 20+, Safari 3+, Opera 10+ </p>
 ### Options:
 #### Opening one time by session options:
