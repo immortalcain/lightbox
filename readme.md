@@ -9,17 +9,18 @@
     <li>Display with cookies</li>
 </ul>
 <p>Browsers : IE7+, Firefox 5+, Chrome 20+, Safari 3+, Opera 10+ </p>
-### jQuery 1.9 vs 2.0b:
+### jQuery 1.9 vs 2.0:
 <p>Lightbox.js is compatible with version 2.0 of jQuery (beta 1 for now). This version no longer supports version 7 and
     Internet Explorer 8.
     If you want to use version 2.0 of jQuery using the following html code:
     <pre>
-        <code><! - [if lt IE 9]>
+        <code>
+            <!--[if lt IE 9]-->
             <script src="jquery-1.9.0.js"></script>
-            <! [endif] ->
-            <! - [if gte IE 9]> <! ->
+            <!--[endif]-->
+            <!--[if gte IE 9]><!-->
             <script src="jquery-2.0.0.js"></script>
-            <! - [endif] ->
+            <!--[endif]-->
         </code>
     </pre>
 </p>
