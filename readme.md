@@ -8,7 +8,6 @@
     <li>Responsive</li>
     <li>Display with cookies</li>
 </ul>
-
 <p>Browsers : IE7+, Firefox 5+, Chrome 20+, Safari 3+, Opera 10+ </p>
 ### Options:
 #### Opening one time by session options (cookies):
@@ -68,4 +67,4 @@
         Default: lightbox</code>
 </pre>
 ### Realignment when resizing the window:
-The realignment is integrated in the plugin.
+<p>The realignment is integrated in the plugin.</p>
