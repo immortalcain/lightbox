@@ -11,7 +11,7 @@
 
 <p>Browsers : IE7+, Firefox 5+, Chrome 20+, Safari 3+, Opera 10+ </p>
 ### Options:
-#### Opening one time by session options:
+#### Opening one time by session options (cookies):
 <p>The use of the variable "openFirst" active display popup unique throughout the duration of the session configured by
     the cookie created with the option "openFirst" enabled.</p>
 <p>The plugin "jquery-cookie.js" is required to create the cookie. Integrated package.
