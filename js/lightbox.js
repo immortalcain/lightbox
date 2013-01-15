@@ -1,6 +1,6 @@
 /* Project: Lightbox.js
  * Code name: Chimeara
- * Version: 1.4.3
+ * Version: 1.4.4
  * Author: Agence Epsilon
  * Author URL: http://www.agenceepsilon.com
  * Git URL: https://github.com/agenceepsilon/lightbox
@@ -90,8 +90,7 @@
                 });
             });
 
-            // The close function
-            $($closeId).click(function(){
+            function closeItem(){
                 $($globalDiv).hide(param.closeEffect, {
                     duration: param.closeSpeed,
                     easing: param.closeEasing
@@ -99,6 +98,11 @@
                 if(param.openFirst){
                     $.cookie(param.cookieName, 1, {expires: param.cookieTime});
                 }
+            }
+
+            // The close function
+            $($closeId).click(function(){
+                closeItem();
             });
 
             // ------------------ //
@@ -130,13 +134,7 @@
             // Around Close (aroundClose)
             if(param.aroundClose){
                 $($globalDiv).click(function(){
-                    $($globalDiv).hide(param.closeEffect, {
-                        duration: param.closeSpeed,
-                        easing: param.closeEasing
-                    });
-                    if(param.openFirst){
-                        $.cookie(param.cookieName, 1, {expires: param.cookieTime});
-                    }
+                    closeItem();
                 });
             }
         });
