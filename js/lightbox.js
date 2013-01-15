@@ -27,6 +27,7 @@
             closeEffect: 'fade',
             closeEasing: 'linear',
             aroundEffect: true,
+            aroundClose: false,
             globalClass: 'lightbox',
             relAttr: 'lightbox',
             cookieName: 'lightbox',
@@ -125,6 +126,18 @@
             }
             else{
                 $($globalDiv).css("height", 0);
+            }
+            // Around Close (aroundClose)
+            if(param.aroundClose){
+                $($globalDiv).click(function(){
+                    $($globalDiv).hide(param.closeEffect, {
+                        duration: param.closeSpeed,
+                        easing: param.closeEasing
+                    });
+                    if(param.openFirst){
+                        $.cookie(param.cookieName, 1, {expires: param.cookieTime});
+                    }
+                });
             }
         });
     };
