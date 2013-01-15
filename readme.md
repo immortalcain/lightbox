@@ -1,7 +1,7 @@
-# LightBox.js
+# Lightbox.js
 ## Call the plugin:
 <pre>
-    <code>$(var).LightBox();</code>
+    <code>$(var).lightbox();</code>
 </pre>
 
 <ul>

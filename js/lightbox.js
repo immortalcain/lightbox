@@ -1,12 +1,12 @@
-/* Project: LightBox.js
+/* Project: Lightbox.js
  * Code name: Chimeara
- * Version: 1.4.2
+ * Version: 1.4.3
  * Author: Agence Epsilon
  * Author URL: http://www.agenceepsilon.com
  * Git URL: https://github.com/agenceepsilon/lightbox
  * Release Date: 11/10/2012
  *
- * Description: LightBox.js
+ * Description: Lightbox.js
  * jQuery: 1.8+
  * jQuery UI: 1.9+
  * Plugin(s):
@@ -15,7 +15,7 @@
  */
 
 (function($){
-    $.fn.LightBox = function(opts){
+    $.fn.lightbox = function(opts){
 
         // Defaults options
         var defaults = {
