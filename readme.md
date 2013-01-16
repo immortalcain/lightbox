@@ -7,6 +7,7 @@
     <li>Light</li>
     <li>Responsive</li>
     <li>Display with cookies</li>
+    <li>jQuery 1.9 ready (min jQuery 1.8)</li>
 </ul>
 <p>Browsers : IE7+, Firefox 5+, Chrome 20+, Safari 3+, Opera 10+ </p>
 ### jQuery 1.9 vs 2.0:
