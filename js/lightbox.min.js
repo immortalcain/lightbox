@@ -1,6 +1,6 @@
 /* Project: Lightbox.js
  * Code name: Chimeara
- * Version: 1.4.4
+ * Version: 1.4.5
  * Author: Agence Epsilon
  * Author URL: http://www.agenceepsilon.com
  * Git URL: https://github.com/agenceepsilon/lightbox
