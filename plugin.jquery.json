@@ -10,6 +10,11 @@
         "name": "Agence Epsilon",
         "url": "http://www.agenceepsilon.com"
     },
+    "maintainers": [
+        {
+            "name": "Boris Damevin"
+        }
+    ],
     "licenses": [
         {
             "type": "MIT",
