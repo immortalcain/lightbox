@@ -4,6 +4,7 @@
  * Author: Agence Epsilon
  * Author URL: http://www.agenceepsilon.com
  * Git URL: https://github.com/agenceepsilon/lightbox
+ * Plugin URL: http://plugins.jquery.com/lightbox/
  * Release Date: 11/10/2012
  *
  * Description: Lightbox.js
@@ -82,24 +83,28 @@
             // Open/Close functions //
             // -------------------- //
 
-            // The open function
-            $($relAttr).click(function(){
+            function openItem(){
                 $($globalDiv).show(param.openEffect, {
                     duration: param.openSpeed,
                     easing: param.openEasing
                 });
-            });
-
+            }
             function closeItem(){
                 $($globalDiv).hide(param.closeEffect, {
                     duration: param.closeSpeed,
                     easing: param.closeEasing
                 });
                 if(param.openFirst){
-                    $.cookie(param.cookieName, 1, {expires: param.cookieTime});
+                    $.cookie(param.cookieName, 1, {
+                        expires: param.cookieTime
+                    });
                 }
             }
 
+            // The open function
+            $($relAttr).click(function(){
+                openItem();
+            });
             // The close function
             $($closeId).click(function(){
                 closeItem();
