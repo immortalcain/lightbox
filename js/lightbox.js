@@ -38,55 +38,45 @@
             // -------- //
             // Add HTML //
             // -------- //
-            $("body").append('<div class="' + param.globalClass + '" style="display: none;"><div class="lightbox-block"><div class="lightbox-content"><span id="close"></span></div></div></div>');
+            $("body").append('<div class="' + param.globalClass + '" style="display: none;"><div class="lightbox-block" style="width: auto;"><div class="lightbox-content" style="width: 100%; height: 100%;"><img src="images/image2.jpg" height="1155" width="800"><span id="close"></span></div></div></div>');
 
             // Global variables
             var $centerElem = $(".lightbox-block");
             var $globalDiv = $("." + param.globalClass);
             var $closeId = $("#close");
 
-            // --------------- //
-            // Center function //
-            // --------------- //
-
-            var $windowHeight = $(window).height(); // The actual window height
-            var $windowWidth = $(window).width(); // The actual window width
-            var $elementHeight = $($centerElem).height();  // The element height
-            var $elementWidth = $($centerElem).width(); // The element width
+            var $windowHeight = $(window).height();
+            var $windowWidth = $(window).width();
+            var $elementHeight = $($centerElem).height();
 
             // --------- //
             // Functions //
             // --------- //
-            function centerItem($elemH, $elemW){
+            function centerItem($elemH){
+                var $elementWidth = $($centerElem).width();
                 $($centerElem).css({
                     "top": (($windowHeight / 2) - ($elemH / 2)),
-                    "left": (($windowWidth / 2) - ($elemW / 2))
+                    "left": (($windowWidth / 2) - ($elementWidth / 2))
                 });
             }
 
             function itemResize(){
                 if($elementHeight > $windowHeight){
                     var $newHeight = ($windowHeight * (90 / 100));
-                    var $newWidth = ($windowWidth * (90 / 100));
-                    $($centerElem).css({
-                        "height": $newHeight,
-                        "width": $newWidth
-                    });
-                    centerItem($newHeight, $newWidth);
+                    $($centerElem).css("height", $newHeight);
+                    centerItem($newHeight);
                 } else{
-                    centerItem($elementHeight, $elementWidth);
+                    centerItem($elementHeight);
                 }
             }
 
-            itemResize();
-
-            window.onresize = alignResize;
-            function alignResize(){
-                var $windowHeight = $(window).height();
-                var $windowWidth = $(window).width();
-
-                centerItem($windowHeight, $windowWidth);
-            }
+            //            window.onresize = alignResize;
+            //            function alignResize(){
+            //                var $windowHeight = $(window).height();
+            //                var $windowWidth = $(window).width();
+            //
+            //                centerItem($windowHeight, $windowWidth);
+            //            }
 
             // -------------------- //
             // Open/Close functions //
@@ -109,6 +99,7 @@
             // The open function
             $(this).click(function(){
                 openItem();
+                itemResize();
                 return false
             });
             // The close function

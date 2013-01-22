@@ -7,6 +7,8 @@ p {
 
 img {
     display: block;
+    width: auto;
+    height: 100%;
 }
 
 .global {
@@ -23,8 +25,7 @@ img {
 
 .lightbox-block {
     background: #FFFFFF;
-    min-height: 400px;
-    min-width: 700px;
+    height: 400px;
     border: dashed 1px #000;
     position: absolute;
 }
