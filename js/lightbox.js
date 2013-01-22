@@ -52,11 +52,11 @@
             // --------- //
             // Functions //
             // --------- //
-            function centerItem($elemH){
+            function centerItem($windowH, $windowW, $elemH){
                 var $elementWidth = $($centerElem).width();
                 $($centerElem).css({
-                    "top": (($windowHeight / 2) - ($elemH / 2)),
-                    "left": (($windowWidth / 2) - ($elementWidth / 2))
+                    "top": (($windowH / 2) - ($elemH / 2)),
+                    "left": (($windowW / 2) - ($elementWidth / 2))
                 });
             }
 
@@ -64,19 +64,20 @@
                 if($elementHeight > $windowHeight){
                     var $newHeight = ($windowHeight * (90 / 100));
                     $($centerElem).css("height", $newHeight);
-                    centerItem($newHeight);
+                    centerItem($windowHeight, $windowWidth, $newHeight);
                 } else{
-                    centerItem($elementHeight);
+                    centerItem($windowHeight, $windowWidth, $elementHeight);
                 }
             }
 
-            //            window.onresize = alignResize;
-            //            function alignResize(){
-            //                var $windowHeight = $(window).height();
-            //                var $windowWidth = $(window).width();
-            //
-            //                centerItem($windowWidth, $windowHeight);
-            //            }
+            window.onresize = alignResize;
+            function alignResize(){
+                var $windowHeight = $(window).height();
+                var $windowWidth = $(window).width();
+                var $elementHeight = $($centerElem).height();
+
+                centerItem($windowHeight, $windowWidth, $elementHeight);
+            }
 
             // -------------------- //
             // Open/Close functions //
