@@ -5,6 +5,10 @@ p {
     padding: 0;
 }
 
+img {
+    display: block;
+}
+
 .global {
     height: auto;
 }
@@ -13,19 +17,19 @@ p {
 /* Optional codes */
 /*----------------*/
 
-.lightbox {
+.lightbox-overlay {
     background: rgba(0, 0, 0, 0.5);
 }
 
 .lightbox-block {
     background: #FFFFFF;
-    height: 1300px;
-    width: 500px;
+    min-height: 400px;
+    min-width: 700px;
     border: dashed 1px #000;
     position: absolute;
 }
 
-.lightbox #close {
+.lightbox-overlay #close {
     display: block;
     background: url(../images/cross.png) no-repeat;
     width: 12px;

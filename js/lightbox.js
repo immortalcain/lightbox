@@ -20,7 +20,6 @@
 
         // Defaults options
         var defaults = {
-            openFirst: false,
             openSpeed: 500,
             openEffect: 'fade',
             openEasing: 'linear',
@@ -29,24 +28,21 @@
             closeEasing: 'linear',
             aroundEffect: true,
             aroundClose: false,
-            globalClass: 'lightbox',
-            relAttr: 'lightbox',
-            cookieName: 'lightbox',
-            cookieTime: 7
+            globalClass: 'lightbox-overlay'
         };
 
         var param = $.extend(defaults, opts);
 
         return this.each(function(){
 
-            // Add HTML
-            $(this).wrap('<div class="' + param.globalClass + '" style="display: none;" />');
-            $(this).append('<span id="close" />');
+            // -------- //
+            // Add HTML //
+            // -------- //
+            $("body").append('<div class="' + param.globalClass + '" style="display: none;"><div class="lightbox-block"><div class="lightbox-content"><span id="close"></span></div></div></div>');
 
             // Global variables
-            var $centerElem = $(this);
+            var $centerElem = $(".lightbox-block");
             var $globalDiv = $("." + param.globalClass);
-            var $relAttr = $('a[rel="' + param.relAttr + '"]');
             var $closeId = $("#close");
 
             // --------------- //
@@ -58,33 +54,38 @@
             var $elementHeight = $($centerElem).height();  // The element height
             var $elementWidth = $($centerElem).width(); // The element width
 
-            function centerItem($elem, $windowH, $windowW){
-                $($elem).css({
-                    "top": (($windowH / 2) - ($elementHeight / 2)),
-                    "left": (($windowW / 2) - ($elementWidth / 2))
+            // --------- //
+            // Functions //
+            // --------- //
+            function centerItem($elemH, $elemW){
+                $($centerElem).css({
+                    "top": (($windowHeight / 2) - ($elemH / 2)),
+                    "left": (($windowWidth / 2) - ($elemW / 2))
                 });
             }
 
-            centerItem($centerElem, $windowHeight, $windowWidth);
-
-            // Functions
             function itemResize(){
                 if($elementHeight > $windowHeight){
-                    $(this).css("height", "90%");
+                    var $newHeight = ($windowHeight * (90 / 100));
+                    var $newWidth = ($windowWidth * (90 / 100));
+                    $($centerElem).css({
+                        "height": $newHeight,
+                        "width": $newWidth
+                    });
+                    centerItem($newHeight, $newWidth);
+                } else{
+                    centerItem($elementHeight, $elementWidth);
                 }
             }
-            itemResize();
 
-            // ---------------------- //
-            // Window Resize function //
-            // ---------------------- //
+            itemResize();
 
             window.onresize = alignResize;
             function alignResize(){
-                var $windowHeight = $(window).height(); // The new window height
-                var $windowWidth = $(window).width(); // The new window width
+                var $windowHeight = $(window).height();
+                var $windowWidth = $(window).width();
 
-                centerItem($centerElem, $windowHeight, $windowWidth);
+                centerItem($windowHeight, $windowWidth);
             }
 
             // -------------------- //
@@ -103,16 +104,12 @@
                     duration: param.closeSpeed,
                     easing: param.closeEasing
                 });
-                if(param.openFirst){
-                    $.cookie(param.cookieName, 1, {
-                        expires: param.cookieTime
-                    });
-                }
             }
 
             // The open function
-            $($relAttr).click(function(){
+            $(this).click(function(){
                 openItem();
+                return false
             });
             // The close function
             $($closeId).click(function(){
@@ -123,15 +120,6 @@
             // Boolean parameters //
             // ------------------ //
 
-            // Open First (openFirst)
-            if(param.openFirst){
-                if($.cookie(param.cookieName) != '1'){
-                    $($globalDiv).show();
-                }
-            }
-            else{
-                $($globalDiv).hide();
-            }
             // Around Effect (aroundEffect)
             if(param.aroundEffect){
                 $($globalDiv).css({
