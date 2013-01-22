@@ -67,6 +67,14 @@
 
             centerItem($centerElem, $windowHeight, $windowWidth);
 
+            // Functions
+            function itemResize(){
+                if($elementHeight > $windowHeight){
+                    $(this).css("height", "90%");
+                }
+            }
+            itemResize();
+
             // ---------------------- //
             // Window Resize function //
             // ---------------------- //
