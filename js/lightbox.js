@@ -38,7 +38,7 @@
             // -------- //
             // Add HTML //
             // -------- //
-            $("body").append('<div class="' + param.globalClass + '" style="display: none;"><div class="lightbox-block" style="width: auto;"><div class="lightbox-content" style="width: 100%; height: 100%;"><img src="images/image.jpg" height="1155" width="800"><span id="close"></span></div></div></div>');
+            $("body").append('<div class="' + param.globalClass + '" style="display: none;"><div class="lightbox-block" style="width: auto;"><div class="lightbox-content" style="width: 100%; height: 100%;"><img src="images/image.jpg"><span id="close"></span></div></div></div>');
 
             // Global variables
             var $centerElem = $(".lightbox-block");
