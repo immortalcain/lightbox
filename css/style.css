@@ -11,6 +11,10 @@ img {
     height: 100%;
 }
 
+a {
+    display: inline-block;
+}
+
 .global {
     height: auto;
 }
