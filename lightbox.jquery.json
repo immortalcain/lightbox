@@ -2,28 +2,32 @@
     "name": "lightbox",
     "title": "jQuery Lightbox",
     "description": "A simple LightBox.",
-    "keywords": [
-        "jquery",
-        "jquery ui",
-        "lightbox"
-    ],
+    "keywords":
+        [
+            "jquery",
+            "jquery ui",
+            "lightbox",
+            "popup"
+        ],
     "version": "1.4.6",
     "author": {
         "name": "Agence Epsilon",
         "url": "http://www.agenceepsilon.com"
     },
-    "maintainers": [
-        {
-            "name": "Boris Damevin",
-            "url": "http://www.agenceepsilon.com"
-        }
-    ],
-    "licenses": [
-        {
-            "type": "MIT",
-            "url": "http://www.opensource.org/licenses/mit-license.php"
-        }
-    ],
+    "maintainers":
+        [
+            {
+                "name": "Boris Damevin",
+                "url": "http://www.agenceepsilon.com"
+            }
+        ],
+    "licenses":
+        [
+            {
+                "type": "MIT",
+                "url": "http://www.opensource.org/licenses/mit-license.php"
+            }
+        ],
     "bugs": "https://github.com/agenceepsilon/lightbox/issues",
     "homepage": "https://github.com/agenceepsilon/lightbox",
     "docs": "https://github.com/agenceepsilon/lightbox#readme",
